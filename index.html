@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>삼광건설산업(주) - SAMKWANG ENC</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <!-- Plus Jakarta Sans (Main) & Noto Sans KR (Fallback for Korean) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        // User's Brand Colors Mapped to Stitch Theme
+                        "primary": "#d4af37",       // Gold
+                        "primary-dark": "#b08d1e",  // Darker Gold
+                        "secondary": "#0a192f",     // Navy
+
+                        "background-light": "#f8f9fa",
+                        "background-dark": "#0a192f",
+
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#112240",
+
+                        "text-main": "#0f172a",
+                        "text-muted": "#64748b",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "Noto Sans KR", "sans-serif"],
+                        "body": ["Noto Sans KR", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(10, 25, 47, 0.08)',
+                        'glow': '0 0 15px rgba(212, 175, 55, 0.3)',
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=90')"
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body {
+            min-height: max(100vh, 100dvh);
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light text-text-main font-display antialiased selection:bg-primary/30 selection:text-secondary pb-24 md:pb-0">
+
+    <!-- Mobile Header -->
+    <header
+        class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+        <div class="px-6 py-4 flex justify-between items-center max-w-7xl mx-auto">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <img src="logo.png" alt="Samkwang Construction Industry Logo"
+                    class="h-12 w-auto object-contain group-hover:opacity-80 transition-opacity">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-gray-600">
+                <a href="#about" class="hover:text-primary transition">About</a>
+                <a href="#business" class="hover:text-primary transition">Business</a>
+                <a href="#portfolio" class="hover:text-primary transition">Portfolio</a>
+                <a href="#contact"
+                    class="px-4 py-2 bg-secondary text-white rounded-lg hover:bg-opacity-90 transition shadow-soft">Contact
+                    Us</a>
+            </nav>
+
+            <!-- Menu Trigger (Mobile) -->
+            <button class="md:hidden p-2 -mr-2 text-gray-600 hover:text-primary transition-colors">
+                <span class="material-icons-round text-3xl">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-12 px-5 max-w-7xl mx-auto w-full">
+
+        <!-- Hero Section -->
+        <section class="flex flex-col lg:flex-row gap-12 mb-20 items-center">
+            <!-- Text Content -->
+            <div class="flex-1 space-y-6" data-aos="fade-right">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/5 border border-secondary/10 text-secondary text-xs font-bold uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Since 2025 · Reliable Partner
+                </div>
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-[1.1] text-secondary tracking-tight">
+                    Building the <br>
+                    <span class="text-primary relative inline-block">
+                        Future
+                        <svg class="absolute w-full h-3 bottom-0 left-0 text-primary/20 -z-10"
+                            preserveaspectratio="none" viewbox="0 0 100 10">
+                            <path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" stroke-width="8"></path>
+                        </svg>
+                    </span> Together
+                </h1>
+                <p class="text-lg text-text-muted leading-relaxed max-w-lg">
+                    지속 가능한 미래를 위해 새로운 지평을 열어갑니다.<br>
+                    삼광건설산업은 <strong>책임 시공</strong>과 <strong>기술적 신뢰</strong>로 보답합니다.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                    <a href="#portfolio"
+                        class="py-4 px-8 rounded-2xl bg-secondary hover:bg-secondary/90 text-white font-bold text-lg shadow-soft shadow-secondary/30 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group">
+                        View Portfolio
+                        <span
+                            class="material-icons-round group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                    <a href="Samkwang_Brochure.pdf" download
+                        class="py-4 px-8 rounded-2xl bg-white border border-gray-200 hover:border-primary/50 text-secondary font-bold text-lg shadow-sm transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+                        <span class="material-icons-round text-primary">download</span>
+                        Brochure
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image (Card Style) -->
+            <div class="flex-1 w-full relative group" data-aos="fade-left">
+                <!-- Decorative Blur -->
+                <div
+                    class="absolute -inset-2 bg-gradient-to-tr from-primary to-secondary rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition duration-500">
+                </div>
+
+                <div
+                    class="relative rounded-3xl bg-white border border-gray-100 shadow-2xl overflow-hidden aspect-[4/3] transform group-hover:-translate-y-2 transition duration-500">
+                    <!-- Image -->
+                    <img alt="Construction Site" class="w-full h-full object-cover"
+                        src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" />
+
+                    <!-- Floating Stats Card -->
+                    <div
+                        class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm p-4 rounded-2xl shadow-lg border border-white/50 flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-secondary/10 p-2 rounded-xl text-secondary">
+                                <span class="material-icons-round">engineering</span>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-gray-400 font-bold uppercase">Debt Ratio</div>
+                                <div class="text-lg font-bold text-secondary">24.78%</div>
+                            </div>
+                        </div>
+                        <div class="h-8 w-px bg-gray-200"></div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-primary/10 p-2 rounded-xl text-primary">
+                                <span class="material-icons-round">verified_user</span>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-gray-400 font-bold uppercase">Liquidity</div>
+                                <div class="text-lg font-bold text-secondary">926%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CEO Message Section (New) -->
+        <section class="mb-24 rounded-[2.5rem] relative overflow-hidden text-white shadow-2xl" data-aos="fade-up">
+            <!-- Sophisticated Gradient Background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#020617]"></div>
+
+            <!-- Decorative Elements -->
+            <div
+                class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3">
+            </div>
+
+            <div class="relative z-10 p-8 md:p-16 flex flex-col md:flex-row gap-12 items-center">
+                <!-- Image Column -->
+                <div class="w-full md:w-1/2 flex justify-center md:block shrink-0">
+                    <div
+                        class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                        <div
+                            class="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-500 z-10">
+                        </div>
+                        <!-- Construction Site View Image -->
+                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700"
+                            alt="CEO at Construction Site">
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="flex-1 space-y-6 text-center md:text-left">
+                    <div
+                        class="inline-flex items-center gap-3 text-primary/90 font-bold tracking-[0.2em] text-lg uppercase border-b border-primary/20 pb-2">
+                        <span class="material-icons-round text-lg">edit_note</span>
+                        대표이사 인사말
+                    </div>
+
+                    <h2
+                        class="text-2xl md:text-3xl font-extrabold leading-tight tracking-tight text-white drop-shadow-lg">
+                        <span class="text-primary">"</span>최고의 품질과 효율성으로<br>
+                        &nbsp;&nbsp;&nbsp;성공적인 프로젝트를 보장합니다.<span class="text-primary">"</span>
+                    </h2>
+
+                    <p class="text-gray-400 text-base md:text-lg leading-relaxed font-light">
+                        각 분야 20년 이상 경력의 숙련된 기술진과 함께 귀사의 신뢰에 최상의 결과로 보답하겠습니다.<br class="hidden md:block">
+                        기본에 충실하며 혁신을 멈추지 않는 파트너가 되겠습니다.
+                    </p>
+
+                    <div class="pt-6 flex flex-col md:flex-row items-center gap-4 justify-center md:justify-start">
+                        <div class="h-px w-12 bg-gradient-to-r from-primary/50 to-transparent hidden md:block"></div>
+                        <div class="text-center md:text-left">
+                            <span class="block text-xs text-primary font-bold uppercase tracking-wider mb-1">삼광건설산업(주)
+                                CEO</span>
+                            <span class="text-2xl md:text-3xl font-extrabold text-white tracking-wide">대표이사 &nbsp;김 현
+                                영</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Executives / Trusted By Style -->
+        <section class="mb-24">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-extrabold text-secondary">Leadership Team</h2>
+                <p class="text-text-muted mt-2">최고의 전문가가 함께 합니다.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <!-- Member 1 -->
+                <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all group"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex items-center gap-5 mb-5">
+                        <div
+                            class="w-20 h-20 rounded-full bg-gray-100 overflow-hidden border-2 border-white shadow-sm shrink-0">
+                            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=200&q=80"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold text-secondary">김병수</h4>
+                            <p class="text-sm text-primary font-bold uppercase mt-1">사내이사 / 개발부문</p>
+                        </div>
+                    </div>
+                    <ul
+                        class="text-sm text-gray-500 space-y-1 list-disc pl-4 py-2 border-t border-gray-100 mt-2 leading-relaxed">
+                        <li>고려대학교 건축공학과 학사 / 건국대학교 부동산대학원 석사</li>
+                        <li>前 GS건설 주택영업 상무 / 前 자이에스앤디 주택개발 이사</li>
+                        <li>25년 경력 부동산 개발, LH신축매입약정 전문가</li>
+                    </ul>
+                </div>
+                <!-- Member 2 -->
+                <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-5 mb-5">
+                        <div
+                            class="w-20 h-20 rounded-full bg-gray-100 overflow-hidden border-2 border-white shadow-sm shrink-0">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold text-secondary">신기훈</h4>
+                            <p class="text-sm text-primary font-bold uppercase mt-1">건설사업본부장</p>
+                        </div>
+                    </div>
+                    <ul
+                        class="text-sm text-gray-500 space-y-1 list-disc pl-4 py-2 border-t border-gray-100 mt-2 leading-relaxed">
+                        <li>고려대학교 건축공학과 학사 / 고려대학교 건축공학과 석사</li>
+                        <li>前 금광건설, 前 대덕건설 건설본부 실장</li>
+                        <li>시공, 공무, 견적, 원가관리 등 건설CM 전문가</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Solutions Grid -->
+        <section id="business" class="flex flex-col gap-6 mb-20">
+            <div class="text-center mb-4" data-aos="fade-up">
+                <h2 class="text-3xl font-extrabold text-secondary">Our Solutions</h2>
+                <p class="text-text-muted mt-2">기획부터 시공, 관리까지 최적의 통합 솔루션</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="group bg-white p-8 rounded-3xl border border-gray-100 hover:border-primary/30 transition-all shadow-sm hover:shadow-soft"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-secondary/5 text-secondary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-secondary group-hover:text-primary transition-all duration-300">
+                        <span class="material-icons-round text-3xl">apartment</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">건축공사업</h3>
+                    <p class="text-text-muted text-sm leading-relaxed mb-6">
+                        공동주택, 오피스텔, 상업용 빌딩 등 다양한 건축물을 최고의 품질로 시공합니다.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-xs font-bold text-gray-500"><span
+                                class="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span> 상업용 빌딩</li>
+                        <li class="flex items-center text-xs font-bold text-gray-500"><span
+                                class="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span> 공공시설 건립</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-white p-8 rounded-3xl border border-gray-100 hover:border-primary/30 transition-all shadow-sm hover:shadow-soft"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-secondary/5 text-secondary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-secondary group-hover:text-primary transition-all duration-300">
+                        <span class="material-icons-round text-3xl">construction</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">전문건설업</h3>
+                    <p class="text-text-muted text-sm leading-relaxed mb-6">
+                        금속구조물, 창호, 상하수도 설비 등 특수 분야에 대한 전문적인 시공 능력을 보유하고 있습니다.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-xs font-bold text-gray-500"><span
+                                class="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span> 시설물 유지 관리</li>
+                        <li class="flex items-center text-xs font-bold text-gray-500"><span
+                                class="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span> 석면 해체/제거</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-white p-8 rounded-3xl border border-gray-100 hover:border-primary/30 transition-all shadow-sm hover:shadow-soft"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-secondary/5 text-secondary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-secondary group-hover:text-primary transition-all duration-300">
+                        <span class="material-icons-round text-3xl">domain_add</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">부동산 개발/시행</h3>
+                    <p class="text-text-muted text-sm leading-relaxed mb-6">
+                        LH매입약정사업, PM, 투자 자문 등 프로젝트의 시작부터 끝까지 함께합니다.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-xs font-bold text-gray-500"><span
+                                class="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span> 프로젝트 파이낸싱 (PF)</li>
+                        <li class="flex items-center text-xs font-bold text-gray-500"><span
+                                class="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span> 투자 자문/컨설팅</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio (Project Grid) -->
+        <section id="portfolio" class="mb-20">
+            <div class="relative mb-12 text-center">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-secondary">Featured Projects</h2>
+                    <p class="text-text-muted mt-2">성공적으로 완수된 주요 프로젝트</p>
+                </div>
+                <div class="md:absolute md:right-0 md:bottom-1 mt-4 md:mt-0">
+                    <a href="projects.html"
+                        class="text-primary font-bold text-lg hover:underline flex items-center gap-1 justify-center md:justify-end">
+                        View All Projects <span class="material-icons-round">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Project 1 -->
+                <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] shadow-lg cursor-pointer"
+                    data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent p-6 flex flex-col justify-end">
+                        <span class="text-primary text-xs font-bold uppercase mb-1">지식산업센터</span>
+                        <h3 class="text-white text-xl font-bold">송도 AIT 센터</h3>
+                        <p class="text-gray-300 text-sm mt-2">
+                            B2 / 27F, 연면적 76,523㎡</p>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] shadow-lg cursor-pointer"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent p-6 flex flex-col justify-end">
+                        <span class="text-primary text-xs font-bold uppercase mb-1">지식산업센터</span>
+                        <h3 class="text-white text-xl font-bold">금광 테크노밸리</h3>
+                        <p class="text-gray-300 text-sm mt-2">
+                            B3 / 7F, 연면적 33,094㎡</p>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] shadow-lg cursor-pointer"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent p-6 flex flex-col justify-end">
+                        <span class="text-primary text-xs font-bold uppercase mb-1">오피스텔</span>
+                        <h3 class="text-white text-xl font-bold">청라 리치아노</h3>
+                        <p class="text-gray-300 text-sm mt-2">
+                            B3 / 10F, 연면적 14,527㎡</p>
+                    </div>
+                </div>
+                <!-- Project 4 (Updated) -->
+                <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] shadow-lg cursor-pointer"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent p-6 flex flex-col justify-end">
+                        <span class="text-primary text-xs font-bold uppercase mb-1">상업시설</span>
+                        <h3 class="text-white text-xl font-bold">영종 스타타워</h3>
+                        <p class="text-gray-300 text-sm mt-2">
+                            B3 / 10F, 연면적 23,590㎡</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Disclaimer Text -->
+            <p class="text-gray-400 text-sm mt-4">* 본 프로젝트는 당사 소속 기술진들의 시공실적을 포함합니다.</p>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact"
+            class="py-12 px-6 bg-secondary rounded-3xl text-center relative overflow-hidden shadow-2xl">
+            <!-- Background Pattern -->
+            <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
+                style="background-image: radial-gradient(#d4af37 1px, transparent 1px); background-size: 20px 20px;">
+            </div>
+
+            <div class="relative z-10">
+                <h2 class="text-3xl font-bold text-white mb-3">Ready to build your vision?</h2>
+                <p class="text-gray-400 mb-8 text-sm">성공적인 프로젝트를 위한 첫 걸음, 삼광건설산업과 함께하세요.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button
+                        class="py-4 px-8 rounded-xl bg-primary text-secondary font-bold shadow-glow hover:bg-white transition-colors">
+                        Get a Quote (견적 문의)
+                    </button>
+                    <button
+                        class="py-4 px-8 rounded-xl bg-transparent border border-gray-600 text-white font-bold hover:bg-white/10 transition-colors">
+                        02-1234-5678
+                    </button>
+                </div>
+                <p class="mt-8 text-xs text-gray-500">© 2025 SAMKWANG CONSTRUCTION INDUSTRY. All rights reserved.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom Tab Bar (Stitch/iOS Style) - Mobile Only -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-lg border-t border-gray-200 pb-safe pt-2 px-6 z-40">
+        <div class="flex justify-between items-center max-w-md mx-auto">
+            <a href="#" class="flex flex-col items-center gap-1 p-2 text-primary">
+                <span class="material-icons-round text-2xl">home</span>
+                <span class="text-[10px] font-medium">Home</span>
+            </a>
+            <a href="#about" class="flex flex-col items-center gap-1 p-2 text-gray-400 hover:text-secondary">
+                <span class="material-icons-round text-2xl">business</span>
+                <span class="text-[10px] font-medium">About</span>
+            </a>
+            <a href="#portfolio" class="flex flex-col items-center gap-1 p-2 text-gray-400 hover:text-secondary">
+                <span class="material-icons-round text-2xl">grid_view</span>
+                <span class="text-[10px] font-medium">Projects</span>
+            </a>
+            <a href="#contact" class="flex flex-col items-center gap-1 p-2 text-gray-400 hover:text-secondary">
+                <span class="material-icons-round text-2xl">mail</span>
+                <span class="text-[10px] font-medium">Contact</span>
+            </a>
+        </div>
+        <!-- Safe Area Spacer for iOS Home Indicator -->
+        <div class="h-5 w-full"></div>
+    </nav>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+            easing: 'ease-out-cubic'
+        });
+    </script>
+</body>
+
+</html>
