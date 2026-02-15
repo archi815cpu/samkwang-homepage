@@ -473,6 +473,12 @@
             </div>
         </section>
 
+        <!-- Scroll to Top Button -->
+        <button id="scrollTopBtn"
+            class="fixed bottom-24 right-6 w-12 h-12 rounded-full bg-primary text-secondary shadow-glow z-50 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <span class="material-icons-round">arrow_upward</span>
+        </button>
+
     </main>
 
     <!-- Bottom Tab Bar (Stitch/iOS Style) - Mobile Only -->
@@ -506,6 +512,26 @@
             once: true,
             offset: 50,
             easing: 'ease-out-cubic'
+        });
+
+        // Scroll to Top Logic
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.remove('opacity-0', 'invisible');
+                scrollTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                scrollTopBtn.classList.add('opacity-0', 'invisible');
+                scrollTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>
