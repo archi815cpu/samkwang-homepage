@@ -110,31 +110,33 @@
             </button>
         </div>
 
-        <!-- Mobile Nav Overlay -->
-        <div id="mobile-menu"
-            class="fixed inset-0 z-[100] bg-white bg-opacity-100 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col"
-            style="opacity: 1 !important; background-color: white !important;">
-            <div class="px-6 py-4 flex justify-between items-center border-b border-gray-100">
-                <!-- Wrapper for alignment matching header -->
-                <a href="#" class="flex items-center gap-2">
-                    <img src="logo.png" alt="Logo" class="h-10 w-auto object-contain">
-                </a>
-                <button id="close-menu-btn" class="p-2 -mr-2 text-gray-600 hover:text-primary transition-colors">
-                    <span class="material-icons-round text-3xl">close</span>
-                </button>
-            </div>
-            <nav class="flex-1 flex flex-col items-center justify-center space-y-8 text-2xl font-bold text-secondary">
-                <a href="#about" class="mobile-link hover:text-primary transition">About</a>
-                <a href="#members" class="mobile-link hover:text-primary transition">Members</a>
-                <a href="#business" class="mobile-link hover:text-primary transition">Business</a>
-                <a href="#portfolio" class="mobile-link hover:text-primary transition">Portfolio</a>
-                <a href="#contact" class="mobile-link hover:text-primary transition">Contact Us</a>
-            </nav>
-            <div class="p-8 text-center bg-gray-50 border-t border-gray-100">
-                <p class="text-gray-400 text-xs">© 1992 SAMKWANG ENC</p>
-            </div>
-        </div>
+
     </header>
+
+    <!-- Mobile Nav Overlay (Moved Outside Header) -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[100] bg-white opacity-100 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col"
+        style="opacity: 1 !important; background-color: white !important;">
+        <div class="px-6 py-4 flex justify-between items-center border-b border-gray-100">
+            <!-- Wrapper for alignment matching header -->
+            <a href="#" class="flex items-center gap-2">
+                <img src="logo.png" alt="Logo" class="h-10 w-auto object-contain">
+            </a>
+            <button id="close-menu-btn" class="p-2 -mr-2 text-gray-600 hover:text-primary transition-colors">
+                <span class="material-icons-round text-3xl">close</span>
+            </button>
+        </div>
+        <nav class="flex-1 flex flex-col items-center justify-center space-y-8 text-2xl font-bold text-secondary">
+            <a href="#about" class="mobile-link hover:text-primary transition">About</a>
+            <a href="#members" class="mobile-link hover:text-primary transition">Members</a>
+            <a href="#business" class="mobile-link hover:text-primary transition">Business</a>
+            <a href="#portfolio" class="mobile-link hover:text-primary transition">Portfolio</a>
+            <a href="#contact" class="mobile-link hover:text-primary transition">Contact Us</a>
+        </nav>
+        <div class="p-8 text-center bg-gray-50 border-t border-gray-100">
+            <p class="text-gray-400 text-xs">© 1992 SAMKWANG ENC</p>
+        </div>
+    </div>
 
     <main class="pt-24 pb-12 px-5 max-w-7xl mx-auto w-full">
 
