@@ -81,7 +81,7 @@
 </head>
 
 <body
-    class="bg-background-light text-text-main font-display antialiased selection:bg-primary/30 selection:text-secondary pb-24 md:pb-0">
+    class="bg-background-light text-text-main font-display antialiased selection:bg-primary/30 selection:text-secondary md:pb-0">
 
     <!-- Mobile Header -->
     <header
@@ -105,9 +105,33 @@
             </nav>
 
             <!-- Menu Trigger (Mobile) -->
-            <button class="md:hidden p-2 -mr-2 text-gray-600 hover:text-primary transition-colors">
+            <button id="mobile-menu-btn" class="md:hidden p-2 -mr-2 text-gray-600 hover:text-primary transition-colors">
                 <span class="material-icons-round text-3xl">menu</span>
             </button>
+        </div>
+
+        <!-- Mobile Nav Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 z-50 bg-white/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 md:hidden flex flex-col">
+            <div class="px-6 py-4 flex justify-between items-center border-b border-gray-100">
+                <!-- Wrapper for alignment matching header -->
+                <a href="#" class="flex items-center gap-2">
+                    <img src="logo.png" alt="Logo" class="h-10 w-auto object-contain">
+                </a>
+                <button id="close-menu-btn" class="p-2 -mr-2 text-gray-600 hover:text-primary transition-colors">
+                    <span class="material-icons-round text-3xl">close</span>
+                </button>
+            </div>
+            <nav class="flex-1 flex flex-col items-center justify-center space-y-8 text-2xl font-bold text-secondary">
+                <a href="#about" class="mobile-link hover:text-primary transition">About</a>
+                <a href="#members" class="mobile-link hover:text-primary transition">Members</a>
+                <a href="#business" class="mobile-link hover:text-primary transition">Business</a>
+                <a href="#portfolio" class="mobile-link hover:text-primary transition">Portfolio</a>
+                <a href="#contact" class="mobile-link hover:text-primary transition">Contact Us</a>
+            </nav>
+            <div class="p-8 text-center bg-gray-50 border-t border-gray-100">
+                <p class="text-gray-400 text-xs">© 1992 SAMKWANG ENC</p>
+            </div>
         </div>
     </header>
 
@@ -173,7 +197,8 @@
                             </div>
                             <div>
                                 <div class="text-[10px] text-gray-400 font-bold uppercase">Debt Ratio</div>
-                                <div class="text-lg font-bold text-secondary">24.78%</div>
+                                <div class="text-base md:text-lg font-bold text-secondary whitespace-nowrap">24.78%
+                                </div>
                             </div>
                         </div>
                         <div class="h-8 w-px bg-gray-200"></div>
@@ -183,7 +208,7 @@
                             </div>
                             <div>
                                 <div class="text-[10px] text-gray-400 font-bold uppercase">Liquidity</div>
-                                <div class="text-lg font-bold text-secondary">926%</div>
+                                <div class="text-base md:text-lg font-bold text-secondary whitespace-nowrap">926%</div>
                             </div>
                         </div>
                     </div>
@@ -233,9 +258,9 @@
                     </div>
 
                     <h2
-                        class="text-2xl md:text-3xl font-extrabold leading-tight tracking-tight text-white drop-shadow-lg">
-                        <span class="text-primary">"</span>최고의 품질과 효율성으로<br>
-                        &nbsp;&nbsp;&nbsp;성공적인 프로젝트를 보장합니다.<span class="text-primary">"</span>
+                        class="text-xl md:text-3xl font-extrabold leading-snug md:leading-tight tracking-tight text-white drop-shadow-lg break-keep">
+                        <span class="text-primary">"</span>최고의 품질과 효율성으로<br class="md:hidden">
+                        성공적인 프로젝트를 보장합니다.<span class="text-primary">"</span>
                     </h2>
 
                     <p class="text-gray-400 text-base md:text-lg leading-relaxed font-light">
@@ -489,30 +514,6 @@
 
     </main>
 
-    <!-- Bottom Tab Bar (Stitch/iOS Style) - Mobile Only -->
-    <nav
-        class="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-lg border-t border-gray-200 pb-safe pt-2 px-6 z-40">
-        <div class="flex justify-between items-center max-w-md mx-auto">
-            <a href="#" class="flex flex-col items-center gap-1 p-2 text-primary">
-                <span class="material-icons-round text-2xl">home</span>
-                <span class="text-[10px] font-medium">Home</span>
-            </a>
-            <a href="#about" class="flex flex-col items-center gap-1 p-2 text-gray-400 hover:text-secondary">
-                <span class="material-icons-round text-2xl">business</span>
-                <span class="text-[10px] font-medium">About</span>
-            </a>
-            <a href="#portfolio" class="flex flex-col items-center gap-1 p-2 text-gray-400 hover:text-secondary">
-                <span class="material-icons-round text-2xl">grid_view</span>
-                <span class="text-[10px] font-medium">Projects</span>
-            </a>
-            <a href="#contact" class="flex flex-col items-center gap-1 p-2 text-gray-400 hover:text-secondary">
-                <span class="material-icons-round text-2xl">mail</span>
-                <span class="text-[10px] font-medium">Contact</span>
-            </a>
-        </div>
-        <!-- Safe Area Spacer for iOS Home Indicator -->
-        <div class="h-5 w-full"></div>
-    </nav>
 
     <script>
         AOS.init({
@@ -535,10 +536,24 @@
             }
         });
 
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+            document.body.classList.toggle('overflow-hidden'); // Prevent scrolling when menu is open
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMenu();
             });
         });
     </script>
