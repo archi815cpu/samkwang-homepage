@@ -112,7 +112,7 @@
 
         <!-- Mobile Nav Overlay -->
         <div id="mobile-menu"
-            class="fixed inset-0 z-50 bg-white/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 md:hidden flex flex-col">
+            class="fixed inset-0 z-[60] bg-white transform translate-x-full transition-transform duration-300 md:hidden flex flex-col">
             <div class="px-6 py-4 flex justify-between items-center border-b border-gray-100">
                 <!-- Wrapper for alignment matching header -->
                 <a href="#" class="flex items-center gap-2">
@@ -525,6 +525,13 @@
 
         // Scroll to Top Logic
         const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
